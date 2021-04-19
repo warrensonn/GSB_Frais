@@ -25,10 +25,12 @@
               role="form">
             <fieldset>       
                 <?php
+                $total=0;
                 foreach ($lesFraisForfait as $unFrais) {
                     $idFrais = $unFrais['idfrais'];
                     $libelle = htmlspecialchars($unFrais['libelle']);
-                    $quantite = $unFrais['quantite']; ?>
+                    $quantite = $unFrais['quantite']; 
+                    $total+=$quantite;?>
                     <div class="form-group">
                         <label for="idFrais"><?php echo $libelle ?></label>
                         <input type="text" id="idFrais" 
@@ -40,7 +42,12 @@
                     <?php
                 }
                 ?>
-                <button class="btn btn-success" type="submit">Ajouter</button>
+                <button class="btn btn-success" type="submit"> <?php 
+                if (!$total==0) {
+                    echo 'Modifier'; ?> </button> <?php
+                } else {
+                    echo 'Ajouter';
+                    } ?>
                 <button class="btn btn-danger" type="reset">Effacer</button>
             </fieldset>
         </form>
