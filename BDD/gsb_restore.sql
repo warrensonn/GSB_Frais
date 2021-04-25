@@ -66,12 +66,13 @@ CREATE TABLE IF NOT EXISTS lignefraisforfait (
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS lignefraishorsforfait (
-  id int(11) NOT NULL auto_increment,
+  id int(8) NOT NULL auto_increment,
   idvisiteur char(4) NOT NULL,
   mois char(6) NOT NULL,
   libelle varchar(100) DEFAULT NULL,
   date date DEFAULT NULL,
   montant decimal(10,2) DEFAULT NULL,
+  etat char(3) DEFAULT 'ACC',
   PRIMARY KEY (id),
   FOREIGN KEY (idvisiteur, mois) REFERENCES fichefrais(idvisiteur, mois)
 ) ENGINE=InnoDB;
@@ -88,7 +89,7 @@ INSERT INTO etat (id, libelle) VALUES
 ('RB', 'Remboursée'),
 ('CL', 'Saisie clôturée'),
 ('CR', 'Fiche créée, saisie en cours'),
-('VA', 'Validée et mise en paiement'),
+('VA', 'Validée'),
 ('MP', 'Mise en paiement');
 
 INSERT INTO typevisiteur (num, libelle) VALUES
@@ -127,15 +128,32 @@ INSERT INTO visiteur (id, nom, prenom, login, mdp, adresse, cp, ville, dateembau
 
 -- Ajout de frais tests pour le jury
 INSERT INTO fichefrais (idVisiteur, mois, nbJustificatifs, montantValide, dateModif, idEtat) VALUES
-('b13', '202104', 0, '0.00', '2021-04-01', 'CR');
+('b13', '202104', 0, '0.00', '2021-04-01', 'CR'),
+('e49', '202103', 0, '0.00', '2021-03-01', 'CR'),
+('b16', '202103', 0, '0.00', '2021-03-01', 'CR');
 
 INSERT INTO lignefraisforfait (idVisiteur, mois, idFraisForfait, quantite) VALUES
 ('b13', '202104', 'ETP', 1),
-('b13', '202104', 'KM', 2),
+('b13', '202104', 'KM', 25),
 ('b13', '202104', 'NUI', 3),
-('b13', '202104', 'REP', 5);
+('b13', '202104', 'REP', 5),
 
-INSERT INTO lignefraishorsforfait (id, idVisiteur, mois, libelle, date, montant) VALUES
-(9, 'b13', '202104', 'Courses', '2021-04-02', '22.5'),
-(10, 'b13', '202104', 'Magasin', '2021-04-03', '43');
+('e49', '202103', 'ETP', 2),
+('e49', '202103', 'KM', 78),
+('e49', '202103', 'NUI', 6),
+('e49', '202103', 'REP', 14),
+
+('b16', '202103', 'ETP', 2),
+('b16', '202103', 'KM', 53),
+('b16', '202103', 'NUI', 6),
+('b16', '202103', 'REP', 12);
+
+INSERT INTO lignefraishorsforfait (idVisiteur, mois, libelle, date, montant) VALUES
+('b13', '202104', 'Courses', '2021-02-02', '22.5'),
+('b13', '202104', 'Magasin', '2021-03-03', '43'),
+
+('b16', '202103', 'Taxi', '2021-03-02', '40'),
+('b16', '202103', 'Essence', '2021-03-03', '43'),
+('b16', '202103', 'Café', '2021-03-03', '3'),
+('b16', '202103', 'Essence', '2021-03-03', '43');
 
