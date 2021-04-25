@@ -1,10 +1,11 @@
 <?php
 /**
- * Vue État de Frais des fiches validées
+ * Vue État de Frais des fiches de frais créées
  *
  * PHP Version 7
  * 
- * L'utilisateur comptable à la possibilité de valider la mise en paiement des fiches de frais validées
+ * L'utilisateur peut saisir le visiteur de son choix dans une liste déroulante ainsi qu'un mois 
+ * et cliquer sur search pour demander d'afficher les informations de le fiche de frais demandées
  *
  * @category  PPE
  * @package   GSB
