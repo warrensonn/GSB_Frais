@@ -8,6 +8,7 @@
  * @package   GSB
  * @author    Réseau CERTA <contact@reseaucerta.org>
  * @author    José GIL <jgil@ac-nice.fr>
+ * @author    Bevilacqua Warren <bevilacqua.warren@gmail.com>
  * @copyright 2017 Réseau CERTA
  * @license   Réseau CERTA
  * @version   GIT: <0>
@@ -37,10 +38,19 @@ case 'gererFrais':
     include 'controleurs/c_gererFrais.php';
     break;
 case 'etatFrais':
-    include 'controleurs/c_etatFrais.php';
+    include 'controleurs/c_etatFraisVisiteur.php';
     break;
 case 'deconnexion':
     include 'controleurs/c_deconnexion.php';
+    break;
+case 'validerFrais':
+    include 'controleurs/c_validerFrais.php';
+    break;
+case 'paiement':
+    include 'controleurs/c_paiement.php';
+    break;
+case 'suiviRemboursement':
+    include 'controleurs/c_suiviRemboursement.php';
     break;
 }
 require 'vues/v_pied.php';
