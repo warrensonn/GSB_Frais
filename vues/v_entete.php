@@ -8,6 +8,7 @@
  * @package   GSB
  * @author    Réseau CERTA <contact@reseaucerta.org>
  * @author    José GIL <jgil@ac-nice.fr>
+ * @author    Warren BEVILACQUA <bevilacqua.warren@gmail.com>
  * @copyright 2017 Réseau CERTA
  * @license   Réseau CERTA
  * @version   GIT: <0>
@@ -30,9 +31,7 @@
         <div class="container">
             <?php
             $uc = filter_input(INPUT_GET, 'uc', FILTER_SANITIZE_STRING);
-            if ($estConnecte) {
-                if ($_SESSION['type']=='visiteur') {
-                ?>
+            if ($estConnecte) { ?>
                 <div class="header">
                     <div class="row vertical-align">
                         <div class="col-md-4">
@@ -42,15 +41,17 @@
                                  title="Laboratoire Galaxy-Swiss Bourdin">
                                 Laboratoire Galaxy-Swiss Bourdin
                             </h1>
-                        </div>
+                        </div> 
                         <div class="col-md-8">
-                            <ul class="nav nav-pills pull-right" role="tablist">
+                            <ul class="nav nav-pills pull-right" role="tablist"> 
                                 <li <?php if (!$uc || $uc == 'accueil') { ?>class="active" <?php } ?>>
                                     <a href="index.php">
                                         <span class="glyphicon glyphicon-home"></span>
                                         Accueil
                                     </a>
-                                </li>
+                                </li> <?php
+                            if ($_SESSION['type']=='visiteur') { // Affichage si l'utilisateur est un visiteur ?>
+                                
                                 <li <?php if ($uc == 'gererFrais') { ?>class="active"<?php } ?>>
                                     <a href="index.php?uc=gererFrais&action=saisirFrais">
                                         <span class="glyphicon glyphicon-pencil"></span>
@@ -62,107 +63,39 @@
                                         <span class="glyphicon glyphicon-list-alt"></span>
                                         Afficher mes fiches de frais
                                     </a>
-                                </li>
-                                <li 
-                                <?php if ($uc == 'deconnexion') { ?>class="active"<?php } ?>>
-                                    <a href="index.php?uc=deconnexion&action=demandeDeconnexion">
-                                        <span class="glyphicon glyphicon-log-out"></span>
-                                        Déconnexion
+                                </li> <?php              
+                            } else { // Affichage si l'utilisateur est un comptable ?>
+                            
+                                <li <?php if ($uc == 'validerFrais') { ?>class="active" <?php } ?>>
+                                    <a href="index.php?uc=validerFrais&action=selectionnerVisiteur">
+                                        <span class="glyphicon glyphicon-ok"></span>
+                                         Valider Fiches de frais
                                     </a>
                                 </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>   
-                <?php
-                }else { ?>
-                <div class="header">
-                    <div class="row vertical-align">
-                        <div class="col-md-4">
-                            <h1>
-                                <img src="./assets/logo.jpg" class="img-responsive" 
-                                 alt="Laboratoire Galaxy-Swiss Bourdin" 
-                                 title="Laboratoire Galaxy-Swiss Bourdin">
-                                 Laboratoire Galaxy-Swiss Bourdin
-                            </h1>
-                        </div>
-                        <div class="col-md-8">
-                            <ul class="nav nav-pills pull-right" role="tablist">
-                                <li <?php if (!$uc || $uc == 'accueil') { ?>class="active" <?php } ?>>
-                                    <a href="index.php">
-                                        <span class="glyphicon glyphicon-home"></span>
-                                         Valider Fiche de frais
-                                    </a>
-                                </li>
-                                <li <?php if ($uc == 'gererFrais') { ?>class="active"<?php } ?>>
-                                    <a href="index.php?uc=gererFrais&action=saisirFrais">
-                                        <span class="glyphicon glyphicon-pencil"></span>
+                                <li <?php if ($uc == 'paiement') { ?>class="active"<?php } ?>>
+                                    <a href="index.php?uc=paiement&action=affichageVisiteur">
+                                        <span class="glyphicon glyphicon-eur"></span>
                                          Mettre en paiement
                                     </a>
                                 </li>
-                                <li <?php if ($uc == 'etatFrais') { ?>class="active"<?php } ?>>
-                                    <a href="index.php?uc=etatFrais&action=selectionnerMois">
+                                <li <?php if ($uc == 'suiviRemboursement') { ?>class="active"<?php } ?>>
+                                    <a href="index.php?uc=suiviRemboursement&action=affichage">
                                         <span class="glyphicon glyphicon-list-alt"></span>
-                                         Suivi remboursement
+                                         Remboursements
                                     </a>
-                                </li>
-                                <li 
-                                <?php if ($uc == 'deconnexion') { ?>class="active"<?php } ?>>
+                                </li> <?php
+                            } ?>
+                                <li <?php if ($uc == 'deconnexion') { ?>class="active"<?php } ?>>
                                     <a href="index.php?uc=deconnexion&action=demandeDeconnexion">
                                         <span class="glyphicon glyphicon-log-out"></span>
                                          Déconnexion
                                     </a>
                                 </li>
                             </ul>
-                        </div>
+                        </div>                                                                 
                     </div>
-                </div>
-                <?php
-                } ?>
-                
-            <!-- <div class="header">
-                <div class="row vertical-align">
-                    <div class="col-md-4">
-                        <h1>
-                            <img src="./images/logo.jpg" class="img-responsive" 
-                                 alt="Laboratoire Galaxy-Swiss Bourdin" 
-                                 title="Laboratoire Galaxy-Swiss Bourdin">
-                        </h1>
-                    </div>
-                    <div class="col-md-8">
-                        <ul class="nav nav-pills pull-right" role="tablist">
-                            <li ?php if (!$uc || $uc == 'accueil') { ?>class="active" ?php } ?>>
-                                <a href="index.php">
-                                    <span class="glyphicon glyphicon-home"></span>
-                                    Accueil
-                                </a>
-                            </li>
-                            <li ?php if ($uc == 'gererFrais') { ?>class="active"?php } ?>>
-                                <a href="index.php?uc=gererFrais&action=saisirFrais">
-                                    <span class="glyphicon glyphicon-pencil"></span>
-                                    Renseigner la fiche de frais
-                                </a>
-                            </li>
-                            <li if ($uc == 'etatFrais') { ?>class="active"?php } ?>>
-                                <a href="index.php?uc=etatFrais&action=selectionnerMois">
-                                    <span class="glyphicon glyphicon-list-alt"></span>
-                                    Afficher mes fiches de frais
-                                </a>
-                            </li>
-                            <li 
-                            ?phpif ($uc == 'deconnexion') { ?>class="active"?php } ?>>
-                                <a href="index.php?uc=deconnexion&action=demandeDeconnexion">
-                                    <span class="glyphicon glyphicon-log-out"></span>
-                                    Déconnexion
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div> -->
-            <?php
-            } else {
-                ?>   
+                </div> <?php
+            } else { ?>   
                 <h1>
                     <img src="./assets/logo.jpg"
                          class="img-responsive center-block"

@@ -20,4 +20,3 @@ deconnecter();
         pour revenir à la page de connexion.</p>
 </div>
 <?php
-header("Refresh: 3;URL=index.php");
