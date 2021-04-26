@@ -20,33 +20,34 @@ if (!$uc) {
 }
 
 switch ($action) {
-case 'demandeConnexion':
-    include 'vues/v_connexion.php';
-    break;
-case 'valideConnexion':
-    $login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_STRING);
-    $mdp = filter_input(INPUT_POST, 'mdp', FILTER_SANITIZE_STRING);
-    $visiteur = $pdo->getInfosVisiteur($login, $mdp);
-    if (!is_array($visiteur)) {
-        ajouterErreur('Login ou mot de passe incorrect');
-        include 'vues/v_erreurs.php';
+    case 'demandeConnexion':
         include 'vues/v_connexion.php';
-    } else {
-        $id = $visiteur['id'];
-        $nom = $visiteur['nom'];
-        $prenom = $visiteur['prenom'];
-        $statut= $visiteur['statut'];
+        break;
+    case 'valideConnexion':
+        $login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_STRING);
+        $mdp = filter_input(INPUT_POST, 'mdp', FILTER_SANITIZE_STRING);
+        $mdp = md5($mdp);
+        $visiteur = $pdo->getInfosVisiteur($login, $mdp);
+        if (!is_array($visiteur)) {
+            ajouterErreur('Login ou mot de passe incorrect');
+            include 'vues/v_erreurs.php';
+            include 'vues/v_connexion.php';
+        } else {
+            $id = $visiteur['id'];
+            $nom = $visiteur['nom'];
+            $prenom = $visiteur['prenom'];
+            $statut= $visiteur['statut'];
         
-        if($statut==1) {
-            $unType = "visiteur";
-        }else{
-            $unType = "comptable";
+            if($statut==1) {
+                $unType = "visiteur";
+            }else{
+                $unType = "comptable";
+            }
+            connecter($id, $nom, $prenom, $statut, $unType);
+            header('Location: index.php');
         }
-        connecter($id, $nom, $prenom, $statut, $unType);
-        header('Location: index.php');
-    }
-    break;
-default:
-    include 'vues/v_connexion.php';
-    break;
+        break;
+    default:
+        include 'vues/v_connexion.php';
+        break;
 }
