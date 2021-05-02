@@ -53,5 +53,4 @@ case 'suiviRemboursement':
     include 'controleurs/c_suiviRemboursement.php';
     break;
 }
-require 'vues/v_pied.php';
 ?>
