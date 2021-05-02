@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS visiteur (
   nom char(30) DEFAULT NULL,
   prenom char(30)  DEFAULT NULL, 
   login char(20) DEFAULT NULL,
-  mdp char(100) DEFAULT NULL,
+  mdp char(255) DEFAULT NULL,
   adresse char(30) DEFAULT NULL,
   cp char(5) DEFAULT NULL,
   ville char(30) DEFAULT NULL,
@@ -98,33 +98,16 @@ INSERT INTO typevisiteur (num, libelle) VALUES
 
 -- Récupération des utilisateurs
 INSERT INTO visiteur (id, nom, prenom, login, mdp, adresse, cp, ville, dateembauche, statut) VALUES
-('a131', 'Villechalane', 'Louis', 'lvillachane', 'jux7g', '8 rue des Charmes', '46000', 'Cahors', '2005-12-21', 2),
-('a17', 'Andre', 'David', 'dandre', 'oppg5', '1 rue Petit', '46200', 'Lalbenque', '1998-11-23', 2),
-('a55', 'Bedos', 'Christian', 'cbedos', 'gmhxd', '1 rue Peranud', '46250', 'Montcuq', '1995-01-12', 2),
-('a93', 'Tusseau', 'Louis', 'ltusseau', 'ktp3s', '22 rue des Ternes', '46123', 'Gramat', '2000-05-01', 1),
-('b13', 'Bentot', 'Pascal', 'pbentot', 'doyw1', '11 allée des Cerises', '46512', 'Bessines', '1992-07-09', 1),
-('b16', 'Bioret', 'Luc', 'lbioret', 'hrjfs', '1 Avenue gambetta', '46000', 'Cahors', '1998-05-11', 1),
-('b19', 'Bunisset', 'Francis', 'fbunisset', '4vbnd', '10 rue des Perles', '93100', 'Montreuil', '1987-10-21', 1),
-('b25', 'Bunisset', 'Denise', 'dbunisset', 's1y1r', '23 rue Manin', '75019', 'paris', '2010-12-05', 1),
-('b28', 'Cacheux', 'Bernard', 'bcacheux', 'uf7r3', '114 rue Blanche', '75017', 'Paris', '2009-11-12', 1),
-('b34', 'Cadic', 'Eric', 'ecadic', '6u8dc', '123 avenue de la République', '75011', 'Paris', '2008-09-23', 1),
-('b4', 'Charoze', 'Catherine', 'ccharoze', 'u817o', '100 rue Petit', '75019', 'Paris', '2005-11-12', 1),
-('b50', 'Clepkens', 'Christophe', 'cclepkens', 'bw1us', '12 allée des Anges', '93230', 'Romainville', '2003-08-11', 1),
-('b59', 'Cottin', 'Vincenne', 'vcottin', '2hoh9', '36 rue Des Roches', '93100', 'Monteuil', '2001-11-18', 1),
-('c14', 'Daburon', 'François', 'fdaburon', '7oqpv', '13 rue de Chanzy', '94000', 'Créteil', '2002-02-11', 1),
-('c3', 'De', 'Philippe', 'pde', 'gk9kx', '13 rue Barthes', '94000', 'Créteil', '2010-12-14', 1),
-('c54', 'Debelle', 'Michel', 'mdebelle', 'od5rt', '181 avenue Barbusse', '93210', 'Rosny', '2006-11-23', 1),
-('d13', 'Debelle', 'Jeanne', 'jdebelle', 'nvwqq', '134 allée des Joncs', '44000', 'Nantes', '2000-05-11', 1),
-('d51', 'Debroise', 'Michel', 'mdebroise', 'sghkb', '2 Bld Jourdain', '44000', 'Nantes', '2001-04-17', 1),
-('e22', 'Desmarquest', 'Nathalie', 'ndesmarquest', 'f1fob', '14 Place d Arc', '45000', 'Orléans', '2005-11-12', 1),
-('e24', 'Desnost', 'Pierre', 'pdesnost', '4k2o5', '16 avenue des Cèdres', '23200', 'Guéret', '2001-02-05', 1),
-('e39', 'Dudouit', 'Frédéric', 'fdudouit', '44im8', '18 rue de l église', '23120', 'GrandBourg', '2000-08-01', 1),
-('e49', 'Duncombe', 'Claude', 'cduncombe', 'qf77j', '19 rue de la tour', '23100', 'La souteraine', '1987-10-10', 1),
-('e5', 'Enault-Pascreau', 'Céline', 'cenault', 'y2qdu', '25 place de la gare', '23200', 'Gueret', '1995-09-01', 1),
-('e52', 'Eynde', 'Valérie', 'veynde', 'i7sn3', '3 Grand Place', '13015', 'Marseille', '1999-11-01', 1),
-('f21', 'Finck', 'Jacques', 'jfinck', 'mpb3t', '10 avenue du Prado', '13002', 'Marseille', '2001-11-10', 1),
-('f39', 'Frémont', 'Fernande', 'ffremont', 'xs5tq', '4 route de la mer', '13012', 'Allauh', '1998-10-01', 1),
-('f4', 'Gest', 'Alain', 'agest', 'dywvt', '30 avenue de la mer', '13025', 'Berre', '1985-11-01', 1);
+('a131', 'Villechalane', 'Louis', 'lvillachane', SHA2('jux7g', 224), '8 rue des Charmes', '46000', 'Cahors', '2005-12-21', 2),
+('a17', 'Andre', 'David', 'dandre', SHA2('oppg5', 224), '1 rue Petit', '46200', 'Lalbenque', '1998-11-23', 2),
+('a55', 'Bedos', 'Christian', 'cbedos', SHA2('gmhxd', 224), '1 rue Peranud', '46250', 'Montcuq', '1995-01-12', 2),
+('b13', 'Bentot', 'Pascal', 'pbentot', SHA2('doyw1', 224), '11 allée des Cerises', '46512', 'Bessines', '1992-07-09', 1),
+('b16', 'Bioret', 'Luc', 'lbioret', SHA2('hrjfs', 224), '1 Avenue gambetta', '46000', 'Cahors', '1998-05-11', 1),
+('b50', 'Clepkens', 'Christophe', 'cclepkens', SHA2('bw1us', 224), '12 allée des Anges', '93230', 'Romainville', '2003-08-11', 1),
+('c54', 'Debelle', 'Michel', 'mdebelle', SHA2('od5rt', 224), '181 avenue Barbusse', '93210', 'Rosny', '2006-11-23', 1),
+('d13', 'Debelle', 'Jeanne', 'jdebelle', SHA2('nvwqq', 224), '134 allée des Joncs', '44000', 'Nantes', '2000-05-11', 1),
+('d51', 'Debroise', 'Michel', 'mdebroise', SHA2('sghkb', 224), '2 Bld Jourdain', '44000', 'Nantes', '2001-04-17', 1),
+('e49', 'Duncombe', 'Claude', 'cduncombe', SHA2('qf77j', 224), '19 rue de la tour', '23100', 'La souteraine', '1987-10-10', 1);
 
 -- Ajout de frais tests pour le jury
 INSERT INTO fichefrais (idVisiteur, mois, nbJustificatifs, montantValide, dateModif, idEtat) VALUES
