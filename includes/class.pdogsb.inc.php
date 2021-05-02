@@ -855,6 +855,23 @@ class PdoGsb
         return $requetePrepare->fetch();
     }
 
+
+  /**
+   * SHA2
+   *
+   * @param String $mdp   mot de passe saisi
+   * 
+   * @return mot de passe hashé
+   */
+  public function SHA2($mdp) {
+    $requetePrepare = PdoGSB::$monPdo->prepare(
+      'SELECT SHA2(:mdp, 224) '
+    );
+      $requetePrepare->bindParam(':mdp', $mdp, PDO::PARAM_STR);
+  	  $requetePrepare->execute();
+      return $requetePrepare->fetch()[0];
+  }
+
 }
 ?>
 
