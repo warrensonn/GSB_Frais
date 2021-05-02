@@ -14,6 +14,7 @@
  * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */
 ?>
+<!DOCTYPE html>
 <hr>
 <div class="row">
     <div class="panel panel-info">

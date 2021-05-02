@@ -14,6 +14,7 @@
  * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */
 ?>
+<!DOCTYPE html>
 <div class="row">    
     <h2>Renseigner ma fiche de frais du mois 
         <?php echo $numMois . '-' . $numAnnee ?>
@@ -38,17 +39,16 @@
                                size="10" maxlength="5" 
                                value="<?php echo $quantite ?>" 
                                class="form-control">
-                    </div>
-                    <?php
+                    </div> <?php               
                 }
                 ?>
                 <button class="btn btn-success" type="submit"> <?php 
                 if (!$total==0) {
                     echo 'Modifier'; ?> </button> <?php
                 } else {
-                    echo 'Ajouter';
+                    echo 'Ajouter'; ?> </button> <?php
                     } ?>
-                <button class="btn btn-danger" type="reset">Effacer</button>
+                <button class="btn btn-danger" type="reset">Revenir</button>
             </fieldset>
         </form>
     </div>

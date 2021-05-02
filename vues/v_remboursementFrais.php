@@ -13,6 +13,7 @@
  * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */
 ?>
+<!DOCTYPE html>
 <script type="text/javascript">
 function checkAllBox(ref, name) {
     var form = ref;

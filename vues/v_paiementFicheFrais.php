@@ -13,7 +13,7 @@
  * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */ 
 ?>
-
+<!DOCTYPE html>
 <div id="contenu">
 	<form class="s12" action="index.php?uc=paiement&action=voirEtatFraisValide" method="post">
 		<h2>Mise en paiement des Fiches de Frais</h2> 

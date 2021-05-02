@@ -15,6 +15,7 @@
  * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */
 ?>
+<!DOCTYPE html>
 <div id="accueil">
     <h2>
         Gestion des frais<small> - <?php echo $_SESSION['type'] ?> : 

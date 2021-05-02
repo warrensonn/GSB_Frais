@@ -14,6 +14,7 @@
  * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */
 ?>
+<!DOCTYPE html>
 	<form class="s12" action="index.php?uc=validerFrais&action=voirEtatFrais" method="post">
 		<h2>Les fiches de frais</h2>
 			

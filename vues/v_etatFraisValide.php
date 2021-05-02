@@ -14,6 +14,7 @@
  * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */
 ?>
+<!DOCTYPE html>
 <hr> <?php
 if (empty($lesFraisForfait) || $libEtat == "Fiche créée, saisie en cours" || $libEtat == "Mise en paiement") { 
     // n'affiche que les fiches de frais déjà validée ?>
