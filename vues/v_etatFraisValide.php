@@ -1,17 +1,16 @@
 
 <?php
-/**
- * Vue État de Frais des fiches validées
- *
- * PHP Version 7
+/** Vue État de Frais des fiches validées
+ *  -------
+ *  @file
+ *  @brief L'utilisateur comptable à la possibilité de valider la mise en paiement des fiches de frais validées
  * 
- * L'utilisateur comptable à la possibilité de valider la mise en paiement des fiches de frais validées
- *
- * @category  PPE
- * @package   GSB
- * @author    Warren BEVILACQUA <bevilacqua.warren@gmail.com
- * @version   GIT: <0>
- * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
+ *  @category  PPE
+ *  @package   GSB
+ *  @author    Réseau CERTA <contact@reseaucerta.org>
+ *  @author    Warren BEVILACQUA <bevilacqua.warren@gmail.com>
+ *  @version   GIT: <0>
+ *  @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */
 ?>
 <!DOCTYPE html>

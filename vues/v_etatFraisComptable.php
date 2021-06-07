@@ -1,16 +1,13 @@
 <?php
-/**
- * Affichage des informations d'une fiche de frais saisies
- *
- * PHP Version 7
+/** Affichage des informations d'une fiche de frais saisies
+ *  -------
+ *  @file
+ *  @brief L'utilisateur comptable peut modifier les frais forfaits / refuser ou reporter les frais hors forfait de la fiche saisie et finallement valider la fiche de frais
  * 
- * L'utilisateur comptable peut modifier les frais forfaits / refuser ou reporter les frais hors forfait de la fiche saisie et finallement valider la fiche de frais
- *
- * @category  PPE
- * @package   GSB
- * @author    Warren BEVILACQUA <bevilacqua.warren@gmail.com
- * @version   GIT: <0>
- * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
+ *  @category  PPE
+ *  @package   GSB
+ *  @author    Warren BEVILACQUA <bevilacqua.warren@gmail.com
+ *  @version   GIT: <0>
  */ 
 ?>
 <!DOCTYPE html>

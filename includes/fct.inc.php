@@ -1,19 +1,19 @@
 <?php
-/**
- * Fonctions pour l'application GSB
- *
- * PHP Version 7
- *
- * @category  PPE
- * @package   GSB
- * @author    Cheri Bibi - Réseau CERTA <contact@reseaucerta.org>
- * @author    José GIL <jgil@ac-nice.fr>
- * @author    Warren BEVILACQUA <bevilacqua.warren@gmail.com>
- * @copyright 2017 Réseau CERTA
- * @license   Réseau CERTA
- * @version   GIT: <0>
- * @link      http://www.php.net/manual/fr/book.pdo.php PHP Data Objects sur php.net
- */
+/** Fonctions pour l'application GSB
+ *  -------
+ *  @file
+ *  @brief Regroupe toutes les fonctions utilisées dans l'application et qui ne font jamais appel à la base de données
+ * 
+ *  @category  PPE
+ *  @package   GSB
+ *  @author    Cheri Bibi - Réseau CERTA <contact@reseaucerta.org>
+ *  @author    José GIL <jgil@ac-nice.fr>
+ *  @author    Warren BEVILACQUA <bevilacqua.warren@gmail.com>
+ *  @copyright 2017 Réseau CERTA
+ *  @license   Réseau CERTA
+ *  @version   GIT: <0>
+ *  @link      http://www.php.net/manual/fr/book.pdo.php PHP Data Objects sur php.net
+ */ 
 
 /**
  * Teste si un quelconque visiteur est connecté

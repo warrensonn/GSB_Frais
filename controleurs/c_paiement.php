@@ -1,11 +1,9 @@
 <?php
-/**
- * Mise en paiement des fiches validées
- *
- * PHP Version 7
+/** Mise en paiement des fiches validées
+ *  -------
+ *  @file
+ *  @brief L'utilisateur comptable peut consulter les fiches de frais validées et valider leur mise en paiement
  * 
- * L'utilisateur comptable peut consulter les fiches de frais validées et valider leur mise en paiement
- *
  * @category  PPE
  * @package   GSB
  * @author    Warren BEVILACQUA <bevilacqua.warren@gmail.com

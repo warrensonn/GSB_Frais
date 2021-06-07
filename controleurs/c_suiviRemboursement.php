@@ -1,12 +1,10 @@
 <?php
-/**
- * Mettre à jour les fiches mise en paiement
- *
- * PHP Version 7
+/** Mettre à jour les fiches mise en paiement
+ *  -------
+ *  @file
+ *  @brief L'utilisateur comptable peut modifier l'état des fiches de frais déjà mise en paiement en les cochant.
+ *  Les fiches sont alors notées comme 'remboursées'
  * 
- * L'utilisateur comptable peut modifier l'état des fiches de frais déjà mise en paiement en les cochant.
- * Les fiches sont alors notées comme 'remboursées'.
- *
  * @category  PPE
  * @package   GSB
  * @author    Warren BEVILACQUA <bevilacqua.warren@gmail.com

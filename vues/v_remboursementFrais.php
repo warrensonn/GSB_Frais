@@ -1,16 +1,14 @@
 <?php
-/**
- * Vue État de Frais des fiches mise en paiement
- *
- * PHP Version 7
+/** Vue État de Frais des fiches mise en paiement
+ *  -------
+ *  @file
+ *  @brief L'utilisateur comptable à la possibilité de modifier l'état des fiches saisies pour les passer de 'MP' à 'RB'
  * 
- * L'utilisateur comptable à la possibilité de modifier l'état des fiches saisies pour les passer de 'MP' à 'RB'
- *
- * @category  PPE
- * @package   GSB
- * @author    Warren BEVILACQUA <bevilacqua.warren@gmail.com
- * @version   GIT: <0>
- * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
+ *  @category  PPE
+ *  @package   GSB
+ *  @author    Warren BEVILACQUA <bevilacqua.warren@gmail.com
+ *  @version   GIT: <0>
+ *  @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */
 ?>
 <!DOCTYPE html>

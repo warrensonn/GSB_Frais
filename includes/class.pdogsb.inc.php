@@ -1,17 +1,11 @@
 <?php
-/**
- * Classe d'accès aux données.
- *
- * Utilise les services de la classe PDO
- * pour l'application GSB
- * Les attributs sont tous statiques,
- * les 4 premiers pour la connexion
- * $monPdo de type PDO
- * $monPdoGsb qui contiendra l'unique instance de la classe
- *
- * PHP Version 7
- *
- * @category  PPE
+/** Classe d'accès aux données
+ *  -------
+ *  @file
+ *  @brief Utilise les services de la classe PDO pour l'application GSB Frais
+ *  @brief Les attributs sont tous statiques, les 4 premiers pour la connexion, $monPdo de type PDO, $monPdoLaFleur qui contiendra l'unique instance de la classe
+ * 
+ *  @category  PPE
  * @package   GSB
  * @author    Cheri Bibi - Réseau CERTA <contact@reseaucerta.org>
  * @author    José GIL <jgil@ac-nice.fr>

@@ -1,8 +1,9 @@
 <?php
-/**
- * Index du projet GSB
+/*! \mainpage Projet NetBouquet
  *
- * PHP Version 7
+ * \section desc Application web de création et traitement de fiche de frais suivant le modèle MVC utilisant PHP Version 7
+ * 
+ * Classe d'accès aux données / Fonctions / Vues / Controleurs détaillés dans cette documentation
  *
  * @category  PPE
  * @package   GSB

@@ -1,17 +1,15 @@
 <?php
-/**
- * Affichage liste utilisateurs / mois ayant au moins une fiche validée
- *
- * PHP Version 7
+/** Affichage liste utilisateurs / mois ayant au moins une fiche validée
+ *  -------
+ *  @file
+ *  @brief L'utilisateur comptable peut valider la mise en paiement des fiches de frais déjà validées
  * 
- * L'utilisateur comptable peut valider la mise en paiement des fiches de frais déjà validées
- *
- * @category  PPE
- * @package   GSB
- * @author    Warren BEVILACQUA <bevilacqua.warren@gmail.com
- * @version   GIT: <0>
- * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
- */ 
+ *  @category  PPE
+ *  @package   GSB
+ *  @author    Warren BEVILACQUA <bevilacqua.warren@gmail.com
+ *  @version   GIT: <0>
+ *  @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
+ */
 ?>
 <!DOCTYPE html>
 <div id="contenu">

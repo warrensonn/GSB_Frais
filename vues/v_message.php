@@ -1,15 +1,15 @@
 <?php
-/**
- * Affichage des messages
- *
- * PHP Version 7
- *
- * @category  PPE
- * @package   GSB
- * @author    Warren BEVILACQUA <bevilacqua.warren@gmail.com
- * @version   GIT: <0>
- * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
- */ 
+/** Affichage des messages
+ *  -------
+ *  @file
+ *  @brief Affichage des messages
+ * 
+ *  @category  PPE
+ *  @package   GSB
+ *  @author    Warren BEVILACQUA <bevilacqua.warren@gmail.com
+ *  @version   GIT: <0>
+ *  @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
+ */
 ?>
 <!DOCTYPE html>
 <?php

@@ -1,17 +1,15 @@
 <?php
-/**
- * Validation des fiches de frais
- *
- * PHP Version 7
- *
- * L'utilisateur comptable à la possibilité de valider des fiches de frais en les ayant préalablement si besoin modifiées
- * au niveau des frais forfaitisés ou bien en supprimant / reportant des frais hors forfait.
+/** Validation des fiches de frais
+ *  -------
+ *  @file
+ *  @brief L'utilisateur comptable à la possibilité de valider des fiches de frais en les ayant préalablement si besoin modifiées
+ *  au niveau des frais forfaitisés ou bien en supprimant / reportant des frais hors forfait.
  * 
- * @category  PPE
- * @package   GSB
- * @author    Warren BEVILACQUA <bevilacqua.warren@gmail.com
- * @version   GIT: <0>
- * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
+ *  @category  PPE
+ *  @package   GSB
+ *  @author    Warren BEVILACQUA <bevilacqua.warren@gmail.com
+ *  @version   GIT: <0>
+ *  @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */
 
 $action = $_REQUEST ['action'];
@@ -71,7 +69,13 @@ switch ($action) {
 			$idAutreVisiteur = $_REQUEST['lstVis'];
 			$leMois = $_REQUEST['lstMois'];
 
-			$pdo->majInfoFraisForfaitise ( $idAutreVisiteur, $leMois, $etp, $km, $nui, $rep );	  // On modifie les données de la fiche de frais
+			// Rajouter tests des valeurs rentrées
+			if (is_numeric($etp) && is_numeric($km) && is_numeric($nui) && is_numeric($rep)) {
+				$pdo->majInfoFraisForfaitise ( $idAutreVisiteur, $leMois, $etp, $km, $nui, $rep );	  // On modifie les données de la fiche de frais
+			} else {
+				ajouterErreur('Les valeurs des frais doivent être numériques');
+        		include 'vues/v_erreurs.php';
+			}
 			
 			$lesVisiteurs = $pdo->getLesVisiteurs ();				
 			$lesMois = $pdo->getLesMois (); 

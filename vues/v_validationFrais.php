@@ -1,17 +1,15 @@
 <?php
-/**
- * Vue État de Frais des fiches de frais créées
- *
- * PHP Version 7
+/** Vue État de Frais des fiches de frais créées
+ *  -------
+ *  @file
+ *  @brief L'utilisateur peut saisir le visiteur de son choix dans une liste déroulante ainsi qu'un mois 
+ *  et cliquer sur search pour demander d'afficher les informations de le fiche de frais demandées
  * 
- * L'utilisateur peut saisir le visiteur de son choix dans une liste déroulante ainsi qu'un mois 
- * et cliquer sur search pour demander d'afficher les informations de le fiche de frais demandées
- *
- * @category  PPE
- * @package   GSB
- * @author    Warren BEVILACQUA <bevilacqua.warren@gmail.com
- * @version   GIT: <0>
- * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
+ *  @category  PPE
+ *  @package   GSB
+ *  @author    Warren BEVILACQUA <bevilacqua.warren@gmail.com
+ *  @version   GIT: <0>
+ *  @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */
 ?>
 <!DOCTYPE html>
